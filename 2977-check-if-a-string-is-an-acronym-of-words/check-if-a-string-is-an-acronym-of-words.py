@@ -1,7 +1,9 @@
 class Solution:
     def isAcronym(self, words: List[str], s: str) -> bool:
-        ans = []
-        for i in words:
-            ans.append(i[0])
-        
-        return ''.join(ans) == s
+        if len(words) != len(s):
+            return False
+
+        for i in range(len(words)):
+            if words[i][0] != s[i]:
+                return False
+        return True
